@@ -4,8 +4,18 @@
 -- 1. The city name, country name, and city population of all cities in Europe with population greater than 1 million
 -- (36 rows)
 
+SELECT city.name AS "city name", country.name AS "country name", city.population
+FROM city
+JOIN country ON city.countrycode = country.code
+WHERE city.population > 1000000 AND country.continent = 'Europe';
+
 -- 2. The city name, country name, and city population of all cities in countries where French is an official language and the city population is greater than 1 million
 -- (2 rows)
+SELECT city.name, country.name, city.population
+FROM city
+JOIN countrylanguage ON city.countrycode = countrylanguage.countrycode
+JOIN country ON countrylanguage.countrycode = country.code
+WHERE city.population > 1000000 AND countrylanguage.isofficial = 'true' AND countrylanguage.language = 'French';
 
 -- 3. The name of the countries and continents where the language Javanese is spoken
 -- (1 row)
