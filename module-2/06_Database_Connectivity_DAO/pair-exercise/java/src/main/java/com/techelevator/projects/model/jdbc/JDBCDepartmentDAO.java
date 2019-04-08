@@ -20,6 +20,10 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
 
 	@Override
 	public List<Department> getAllDepartments() {
+		//create an instance of Arraylist
+		//create sql query
+		//SqlRowSet results = jdbcTemplate.queryForRowSet(sqlqueryname)
+		//return arraylist
 		return new ArrayList<>();
 	}
 
