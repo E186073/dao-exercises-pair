@@ -20,6 +20,9 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	
 	@Override
 	public List<Employee> getAllEmployees() {
+		List<Employee> employees = new ArrayList<>();
+
+		String sqlGetAllEmployees = "SELECT employeeId, departmentId, firstName, lastName, birthday, gender";
 		return new ArrayList<>();
 	}
 
