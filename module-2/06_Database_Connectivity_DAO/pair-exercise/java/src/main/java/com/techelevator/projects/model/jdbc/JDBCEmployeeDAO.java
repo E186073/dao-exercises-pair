@@ -5,12 +5,10 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import com.techelevator.projects.model.Department;
-import org.springframework.jdbc.core.JdbcTemplate;
-
 import com.techelevator.projects.model.Employee;
 import com.techelevator.projects.model.EmployeeDAO;
-import org.springframework.jdbc.support.SQLErrorCodes;
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 public class JDBCEmployeeDAO implements EmployeeDAO {

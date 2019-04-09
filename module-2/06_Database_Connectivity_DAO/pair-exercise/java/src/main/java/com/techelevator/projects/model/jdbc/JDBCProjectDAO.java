@@ -2,16 +2,14 @@ package com.techelevator.projects.model.jdbc;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import javax.rmi.PortableRemoteObject;
 import javax.sql.DataSource;
-
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.techelevator.projects.model.Project;
 import com.techelevator.projects.model.ProjectDAO;
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 public class JDBCProjectDAO implements ProjectDAO {

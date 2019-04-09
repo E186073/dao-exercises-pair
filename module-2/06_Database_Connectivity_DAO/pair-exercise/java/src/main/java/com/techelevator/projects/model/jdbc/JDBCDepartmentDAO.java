@@ -1,15 +1,14 @@
 package com.techelevator.projects.model.jdbc;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.sql.DataSource;
 
-import org.springframework.jdbc.core.JdbcTemplate;
-
 import com.techelevator.projects.model.Department;
 import com.techelevator.projects.model.DepartmentDAO;
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 public class JDBCDepartmentDAO implements DepartmentDAO {
@@ -42,7 +41,8 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
 		//create sql query with clause WHERE  name = ?
 		String sqlSearchDepartmentsByName = "SELECT department_id, name " +
 				                            "FROM department " +
-				                            "WHERE name = ?";
+				                            "WHERE name ILIKE ?";
+		nameSearch = "%" + nameSearch + "%";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchDepartmentsByName, nameSearch);
 		departments = mapSqlRowSetDepartmentList(results);
 		//return arraylist
@@ -53,7 +53,7 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
 	public void saveDepartment(Department updatedDepartment) {
 		//sqlquery that has UPDATE clause
 		String sqlSaveDepartment = "UPDATE department " +
-				                   "SET department_id = ? " +
+				                   "SET department_id = ?,  " +
 				                   "name = ?";
 
 
